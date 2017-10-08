@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Temperature Humidity Histogram</title>
+	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css"
+		  rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js"
+			integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+			crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+	<script src="chart.js"></script>
+</head>
+
+<body>
+	<h2>Temperature Humidity Histogram</h2>
+	<p>
+		Start Date (including): <input id="fromDate" type="text"><br/>
+		End   Date (including): <input id="toDate" type="text"><br/>
+		<button id="refresh">refresh</button>
+		<script>
+			//setup refresh button
+			$('#refresh').click(function(){
+				updateChart(document.getElementById('fromDate').value, document.getElementById('toDate').value);
+			});
+		</script>
+
+		<div class="container">
+			<div style="width:85%;">
+				<canvas id="temperatureChart"></canvas>
+			</div>
+		</div>
+		<br/>
+
+		<div class="container">
+			<div style="width:85%;">
+				<canvas id="luxChart"></canvas>
+			</div>
+		</div>
+	</p>
+</body>
+
+</html>

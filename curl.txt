@@ -1,0 +1,14 @@
+curl -X POST http://localhost:8080/temperature --data '{"date":null, "temperatureValue":22.8, "temperatureUnit":"Celsius"}' -i -H "Content-Type":"application/json"
+curl -X POST http://webproject-simulant.rhcloud.com/temperature --data '{"date":1489863694240, "temperatureValue":22.8, "temperatureUnit":"Celsius"}' -i -H "Content-Type":"application/json"
+
+curl -X GET -d userId=0 -d userToken=80540 https://api.plantio.de/plant/0
+
+curl -X PUT -d '{"plantToken": "harrypflanze", "data": [ { "sensor": 0, "value": 10 }, { "sensor": 1 ,"value": 10 } ]}' -H "Content-Type: application/json" http://localhost:3000/api/plant/0
+
+nohup sudo java -jar temperaturemonitor/temperature_monitor_with_dep.jar &
+
+Das erzeugt 40 Sekunden lang (40000 ms) alle 5 Sekunden (5000 ms) ein Bild. rotation um 180°.
+raspistill -vf -hf -o bild_%04d.jpg -t 40000 -tl 5000
+
+
+nohup raspistill -vf -hf -o bild_%05d.jpg -t 1260000000 -tl 3600000 &
