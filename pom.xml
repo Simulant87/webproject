@@ -69,8 +69,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!-- TODO: scope provided must be removed to run local in IntelliJ IDEA
-			<scope>provided</scope>-->
+			<!-- TODO: scope provided must be removed to run local in IntelliJ IDEA -->
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- used for persistence annotations -->
